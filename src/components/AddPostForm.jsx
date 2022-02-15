@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { GlobalWrapper } from '../GlobalWrapper';   
-import photo from '../img/photo-base.png'
+import { v4 as uuidv4 } from 'uuid';
+import thumb from "../img/photo-base.png"
 
 const AddPostForm = ({posts, addPostList}) => {
     const [inputPost, addInputPost] = useState('');
@@ -20,9 +21,10 @@ const AddPostForm = ({posts, addPostList}) => {
 
         addPostList(
             // spread operator array ES6
+            // uuidv4() return a unique ID '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
             [...posts,
                  {
-                     id: 3,
+                     id: uuidv4(),
                      name: inputPost,
                      text: textPost
                  }
@@ -41,7 +43,7 @@ const AddPostForm = ({posts, addPostList}) => {
             <FormAddPost>
                 <form action="" onSubmit={(e) => handleSubmit(e)}>
                     <div className="formPost">
-                        <img src={photo} alt="" />
+                        <img src={thumb} alt="" />
                         <input 
                             type="text" 
                             placeholder="Digite seu Nome"
@@ -137,6 +139,7 @@ const FormAddPost = styled.div`
             height: 17px;
             background:none;
             border:none;
+            cursor:pointer;
             font-family: Roboto;
             font-size: 0.875rem;
             font-weight: normal;
@@ -157,6 +160,7 @@ const FormAddPost = styled.div`
             border:1px solid #5f5f5f;
             border-radius: 8px;
             background-color: #5f5f5f;
+            cursor:pointer;
             font-family: Roboto;
             font-size: 0.875rem;
             font-weight: normal;
