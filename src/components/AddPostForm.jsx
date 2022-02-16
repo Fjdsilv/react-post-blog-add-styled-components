@@ -89,6 +89,10 @@ const FormAddPost = styled.div`
     border-radius: 3px;
     border: solid 1px #3b3b3b;
     background-color: #313131;
+    
+    input,textarea{
+        color: #9f9f9f
+    }
 
     img{
         width: 88px;

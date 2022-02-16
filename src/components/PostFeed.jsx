@@ -24,7 +24,7 @@ const PostFeed = ({id, name, text, deletePost}) => {
                 <div>
                     
                     <h6 className="h_post">Enviado por</h6>
-                    <p>{name}</p>
+                    <p className="name_post">{name}</p>
                 </div>
             </div>
             </PostDiv>
@@ -68,6 +68,39 @@ const PostDiv = styled.div`
         .p_post{
             padding-right: 8%;
             margin-bottom: 18px;
+            color: #9f9f9f;
+            font-family: Roboto;
+            font-size: 1rem;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.25;
+            letter-spacing: normal;
+            text-align: left;
+        }
+
+        .h_post{
+            font-family: Roboto;
+            font-size: 12px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.33;
+            letter-spacing: 0.29px;
+            text-align: left;
+            color: #5f5f5f;
+        }
+
+        .name_post{
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.29;
+            letter-spacing: normal;
+            text-align: left;
+            color: #7a7a7a;
         }
     }
 `;
