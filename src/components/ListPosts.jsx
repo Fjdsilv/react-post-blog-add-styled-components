@@ -3,7 +3,12 @@ import styled from 'styled-components';
 import { GlobalWrapper } from '../GlobalWrapper';
 import PostFeed from './PostFeed';   
 
-const ListPosts = ({posts}) => {
+const ListPosts = ({posts, addPostList}) => {
+
+   const deletePost = (id) => {
+       addPostList(posts.filter(post => post.id !== id))
+   }
+
   return (
     <GlobalWrapper>
         <ListPost>
@@ -13,7 +18,7 @@ const ListPosts = ({posts}) => {
                 const {id, name, text} = post;
 
                 return (
-                    <PostFeed key={id} name={name} text={text}/>
+                    <PostFeed key={id} id={id} name={name} text={text} deletePost={deletePost}/>
                 )
 
             })}

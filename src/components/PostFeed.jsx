@@ -4,7 +4,7 @@ import { GlobalWrapper } from '../GlobalWrapper';
 import thumb from "../img/photo-base.png";
 import clickDel from "../img/delete.svg"
 
-const PostFeed = ({id, name, text}) => {
+const PostFeed = ({id, name, text, deletePost}) => {
   return (
     <div>
         <GlobalWrapper>
@@ -12,6 +12,7 @@ const PostFeed = ({id, name, text}) => {
             <PostDiv>
             <button
                 className="btn-del"
+                onClick={() => deletePost(id)}
             >
                 <img src={clickDel} alt="delete button"></img>
             </button>
