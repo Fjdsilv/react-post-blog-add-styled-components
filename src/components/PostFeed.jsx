@@ -1,14 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { GlobalWrapper } from '../GlobalWrapper';
 import thumb from "../img/photo-base.png";
 import clickDel from "../img/delete.svg"
 
 const PostFeed = ({id, name, text, deletePost}) => {
   return (
-    <div>
-        <GlobalWrapper>
-        <li key={id}>
+    
             <PostDiv>
             <button
                 className="btn-del"
@@ -22,29 +19,26 @@ const PostFeed = ({id, name, text, deletePost}) => {
                     <p>{text}</p>
                 </div>
                 <div>
-                    
                     <h6 className="h_post">Enviado por</h6>
                     <p className="name_post">{name}</p>
                 </div>
             </div>
             </PostDiv>
-        </li>
-        </GlobalWrapper>
-    </div>
+    
   )
 }
 
 const PostDiv = styled.div`
     display:flex;
     position:relative;
-    width: 516px;
+    width: 100%;
     height: auto;
     margin: 8px auto 16px;
     padding: 12px 12px 32px 24px;
     border-radius: 3px;
     border: solid 1px #3b3b3b;
-    background-color: #313131;   
-
+    background-color: #313131;  
+    
     .btn-del{
         position:absolute;
         top:12px;

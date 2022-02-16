@@ -30,7 +30,8 @@ const ListPosts = ({posts, addPostList}) => {
 
 
 const ListPost = styled.section`
-    width: 516px;
+    width: 38%;
+    position:relative;
 
     .feed h4{
         font-family: Roboto;
@@ -42,6 +43,14 @@ const ListPost = styled.section`
         letter-spacing: normal;
         text-align: left;
         color: #7a7a7a;
+    }
+
+    @media only screen and (max-width:1023px){
+        width: 50%;
+    }
+
+    @media only screen and (max-width:768px){
+        width: 70%;
     }
 `;
 

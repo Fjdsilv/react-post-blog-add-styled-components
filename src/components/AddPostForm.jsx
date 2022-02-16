@@ -31,7 +31,7 @@ const AddPostForm = ({posts, addPostList}) => {
                 text: textPost
             }
         ]
-
+        //handle order posts in feed 
         let removeLastArrayElement = newPosts.pop()
         newPosts.unshift(removeLastArrayElement)
         
@@ -130,7 +130,7 @@ const FormAddPost = styled.div`
 
         input[type="text"]{
             width: 100%;
-            max-width: 468px;
+            // max-width: 468px;
             height: 40px;
             margin: 16px 0 8px;
             padding: 12px 12px 12px 16px;
@@ -141,8 +141,8 @@ const FormAddPost = styled.div`
 
         textarea{
             width:100%;
-            max-width: 468px;
-            min-width: 468px;
+            // max-width: 468px;
+            min-width: 100%;
             max-height: 80px;
             min-height: 80px;
             margin: 8px 0 32px;
@@ -196,7 +196,13 @@ const FormAddPost = styled.div`
         }
     }
 
-    
+    @media only screen and (max-width:1023px){
+        width: 50%;
+    }
+
+    @media only screen and (max-width:768px){
+        width: 70%;
+    }
 `;
 
 export default AddPostForm
