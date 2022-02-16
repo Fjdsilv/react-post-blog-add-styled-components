@@ -28,7 +28,6 @@ const ListPosts = ({posts, addPostList}) => {
   )
 }
 
-
 const ListPost = styled.section`
     width: 38%;
     position:relative;

@@ -5,8 +5,7 @@ import clickDel from "../img/delete.svg"
 
 const PostFeed = ({id, name, text, deletePost}) => {
   return (
-    
-            <PostDiv>
+        <PostDiv>
             <button
                 className="btn-del"
                 onClick={() => deletePost(id)}
@@ -23,7 +22,7 @@ const PostFeed = ({id, name, text, deletePost}) => {
                     <p className="name_post">{name}</p>
                 </div>
             </div>
-            </PostDiv>
+        </PostDiv>
     
   )
 }
