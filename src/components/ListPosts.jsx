@@ -1,19 +1,19 @@
 import React from 'react'
 import styled from 'styled-components';
 import { GlobalWrapper } from '../GlobalWrapper';
-import Posts from './Posts';   
+import PostFeed from './PostFeed';   
 
 const ListPosts = ({posts}) => {
   return (
     <GlobalWrapper>
         <ListPost>
-        <div className="feed"><h4>Feed</h4></div>
+        {posts.length > 0 ? <div className="feed"><h4>Feed</h4></div> : ''}
         <ul>
             {posts.map(post => {
                 const {id, name, text} = post;
 
                 return (
-                    <Posts key={id} name={name} text={text}/>
+                    <PostFeed key={id} name={name} text={text}/>
                 )
 
             })}

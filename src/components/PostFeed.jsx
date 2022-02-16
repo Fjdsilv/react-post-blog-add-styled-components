@@ -4,7 +4,7 @@ import { GlobalWrapper } from '../GlobalWrapper';
 import thumb from "../img/photo-base.png";
 import clickDel from "../img/delete.svg"
 
-const Posts = ({id, name, text}) => {
+const PostFeed = ({id, name, text}) => {
   return (
     <div>
         <GlobalWrapper>
@@ -71,4 +71,4 @@ const PostDiv = styled.div`
     }
 `;
 
-export default Posts
+export default PostFeed
