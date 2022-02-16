@@ -7,4 +7,6 @@ export const GlobalWrapper = styled.div`
     display: flex;
     justify-content: center;
 
+    @media screen and (max-width:1200px){
+            padding:0 2%;
 `;

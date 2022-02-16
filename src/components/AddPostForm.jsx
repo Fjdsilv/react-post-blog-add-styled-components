@@ -19,17 +19,36 @@ const AddPostForm = ({posts, addPostList}) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        addPostList(
+        if(inputPost  === "" && textPost === ""){
+            return;
+        }
+        let newPosts = [...posts,
             // spread operator array ES6
             // uuidv4() return a unique ID 
-            [...posts,
-                 {
-                     id: uuidv4(),
-                     name: inputPost,
-                     text: textPost
-                 }
-            ]
-        )
+            {
+                id: uuidv4(),
+                name: inputPost,
+                text: textPost
+            }
+        ]
+
+        let removeLastArrayElement = newPosts.pop()
+        newPosts.unshift(removeLastArrayElement)
+        
+        addPostList(newPosts)
+
+
+        // addPostList(
+        //     // spread operator array ES6
+        //     // uuidv4() return a unique ID 
+        //     [...posts,
+        //          {
+        //              id: uuidv4(),
+        //              name: inputPost,
+        //              text: textPost
+        //          }
+        //     ]
+        // )
     }
 
     const resetForm = () => {
@@ -82,7 +101,7 @@ const AddPostForm = ({posts, addPostList}) => {
 }
 
 const FormAddPost = styled.div`
-    width: 516px;
+    width: 38%;
     height: 353px;
     margin: 40px 0 56px;
     padding: 24px;
